@@ -1,6 +1,6 @@
 # 📘 Advanced Multi-Agent Research System
 
-An AI-powered research platform that simulates a structured academic workflow using **RAG (Retrieval-Augmented Generation)**, **FAISS vector memory**, and a **multi-agent architecture**.
+An AI-powered research platform that simulates a structured academic workflow using **Retrieval-Augmented Generation (RAG)**, **FAISS Vector Memory**, **Multi-Agent Architecture**, and **T5-based Summarization**.
 
 ---
 
@@ -9,54 +9,132 @@ An AI-powered research platform that simulates a structured academic workflow us
 This system goes beyond traditional chatbots by:
 
 * Planning before searching
-* Retrieving real-time web data
-* Generating structured research reports
+* Retrieving real-time web information
+* Generating professional research reports
 * Critiquing and refining outputs
-* Enabling chatbot interaction with generated reports
+* Verifying factual accuracy
+* Creating executive summaries
+* Exporting reports as PDFs
+* Enabling interactive Q&A on generated reports
 
-👉 It works like a **“Chat with PDF” system**, but dynamically generates the document first.
+👉 Think of it as a **dynamic "Chat with PDF" system** that first creates the research document and then allows users to interact with it intelligently.
 
 ---
 
 ## 🧠 Key Features
 
 * 🔍 Real-time web search using SerpAPI
-* 🧩 RAG-based architecture
-* 🗂️ Vector database using FAISS
-* 🤖 Multi-agent system (Planner, Critic, Improver)
-* 💬 Chatbot for report interaction
-* ⚡ Parallel processing for faster execution
-* 🎨 Streamlit-based UI
+* 🧩 Retrieval-Augmented Generation (RAG)
+* 🗂️ FAISS Vector Database for semantic retrieval
+* 🤖 Multi-Agent System
+
+  * Planner Agent
+  * Writer Agent
+  * Critic Agent
+  * Improver Agent
+  * Verifier Agent
+  * Summarizer Agent
+* 📋 T5-based Executive Summary Generation
+* 📥 Professional PDF Export
+* 🎓 Quality Assessment & Confidence Scoring
+* 💬 Interactive RAG-Powered Q&A Assistant
+* ⚡ Parallel Search Processing
+* 🎨 Streamlit-Based User Interface
+* 📚 Semantic Memory using Sentence Transformers
 
 ---
 
 ## 🏗️ System Architecture
 
-### Step-by-step pipeline:
+<p align="center">
+  <img src="assets/architecture.png" alt="Advanced Multi-Agent Research System Architecture" width="100%">
+</p>
 
-1. **User Input** → Enter research topic
-2. **Planner Agent** → Generates search queries
-3. **Web Retrieval** → Fetches data using SerpAPI
-4. **Summarization** → Extracts key insights
-5. **Embedding** → Converts text into vectors
-6. **Vector Storage** → Stored in FAISS
-7. **Context Retrieval** → Top relevant chunks selected
-8. **Report Generation** → Structured research report
-9. **Critic Agent** → Identifies gaps
-10. **Improver Agent** → Refines final output
-11. **Chatbot (RAG)** → Answers questions from report
+<p align="center">
+  <em>Multi-Agent Research Pipeline with RAG, FAISS, Verification, Summarization, and Interactive Q&A</em>
+</p>
+
+---
+
+## 🤖 Agent Responsibilities
+
+### 📌 Planner Agent
+
+* Analyzes the research topic
+* Generates optimized search queries
+* Identifies important focus areas
+
+### 🔍 Retrieval Layer
+
+* Uses SerpAPI for real-time information retrieval
+* Collects relevant data from multiple sources
+
+### 💾 Memory Layer
+
+* Splits retrieved content into chunks
+* Creates embeddings using Sentence Transformers
+* Stores vectors in FAISS for semantic search
+
+### 📝 Writer Agent
+
+* Generates structured research drafts
+* Organizes content into logical sections
+
+### 🔎 Critic Agent
+
+* Reviews generated reports
+* Detects missing information
+* Suggests improvements
+
+### ✨ Improver Agent
+
+* Refines content quality
+* Enhances clarity and completeness
+
+### ✅ Verifier Agent
+
+* Performs fact-checking
+* Validates critical information
+* Improves report reliability
+
+### 📋 Summarizer Agent (T5)
+
+* Generates concise executive summaries
+* Extracts key insights
+* Produces reader-friendly content
+
+### 💬 Q&A Assistant
+
+* Retrieves relevant context from FAISS
+* Answers user questions using RAG
+* Enables interactive report exploration
 
 ---
 
 ## 🧰 Tech Stack
 
-* **Python**
-* **Streamlit**
-* **OpenRouter API (LLM)**
-* **SerpAPI (Web Search)**
-* **FAISS (Vector Database)**
-* **SentenceTransformers (Embeddings)**
-* **NumPy**
+### Programming & Frameworks
+
+* Python
+* Streamlit
+
+### AI & Machine Learning
+
+* Llama 3 8B Instruct (OpenRouter)
+* T5 Transformer
+* Sentence Transformers
+* Retrieval-Augmented Generation (RAG)
+
+### Search & Retrieval
+
+* SerpAPI
+* FAISS Vector Database
+
+### Libraries
+
+* NumPy
+* Requests
+* Python Dotenv
 
 ---
 
@@ -64,80 +142,91 @@ This system goes beyond traditional chatbots by:
 
 ### 1️⃣ Clone Repository
 
-```
-git clone <your-repo-link>
+```bash
+git clone <your-repository-link>
 cd project-folder
 ```
 
 ### 2️⃣ Create Virtual Environment
 
-```
+```bash
 python -m venv venv
+```
+
+Activate Environment:
+
+**Windows**
+
+```bash
 venv\Scripts\activate
+```
+
+**Linux / Mac**
+
+```bash
+source venv/bin/activate
 ```
 
 ### 3️⃣ Install Dependencies
 
-```
-pip install streamlit faiss-cpu sentence-transformers openai python-dotenv requests numpy
+```bash
+pip install -r requirements.txt
 ```
 
-### 4️⃣ Add Environment Variables
+### 4️⃣ Configure Environment Variables
 
 Create a `.env` file:
 
-```
-OPENROUTER_API_KEY=your_key_here
-SERPAPI_API_KEY=your_key_here
+```env
+OPENROUTER_API_KEY=your_api_key
+SERPAPI_API_KEY=your_api_key
 ```
 
 ---
 
 ## ▶️ Run the Application
 
-```
+```bash
 streamlit run main.py
 ```
 
 ---
 
-## 💡 How It Works
-
-* The system retrieves real-time data from the web
-* Converts it into embeddings using SentenceTransformers
-* Stores embeddings in FAISS for similarity search
-* Generates a research report using LLM
-* Allows users to ask questions using a RAG-based chatbot
-
----
-
 ## 🎯 Advantages
 
-* ✔ Reduces hallucination
-* ✔ Uses real-time data
-* ✔ Structured research output
-* ✔ Interactive chatbot support
-* ✔ Modular and scalable design
+✔ Reduces hallucinations using RAG
+
+✔ Uses real-time web information
+
+✔ Semantic retrieval with FAISS
+
+✔ Multi-agent quality improvement workflow
+
+✔ Fact-checking through Verifier Agent
+
+✔ Executive summaries with T5
+
+✔ Professional PDF export
+
+✔ Interactive report chatbot
+
+✔ Modular and scalable architecture
 
 ---
 
 ## 🔮 Future Scope
 
-* 📚 Integration with academic sources (ArXiv, PubMed)
-* 📄 PDF export (research paper format)
-* 📑 Automatic citation generation (APA/IEEE)
-* 🧠 Advanced RAG (re-ranking, hybrid search)
-* ☁️ Cloud deployment
-
-
----
-
-## 📜 License
-
-This project is open-source and available under the MIT License.
+* 📚 Integration with ArXiv and PubMed
+* 📑 Automatic Citation Generation (APA / IEEE)
+* 🔄 Hybrid Search (BM25 + Vector Search)
+* 🎯 Re-ranking Models
+* 🌐 Multi-Language Research Support
+* ☁️ Cloud Deployment (AWS, Azure, GCP)
+* 📊 Research Analytics Dashboard
+* 🧠 Advanced Multi-Agent Collaboration
 
 ---
 
 ## ❤️ Author
 
-Developed as part of an AI research project.
+**Ankita Ghavate**
