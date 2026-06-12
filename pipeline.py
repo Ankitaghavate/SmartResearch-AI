@@ -6,7 +6,6 @@ from memory import Memory
 from agents import planner, critic, improver, writer, summarizer, verifier
 from t5_model import t5_summarize
 
-
 def run_pipeline(topic):
 
     memory = Memory()
