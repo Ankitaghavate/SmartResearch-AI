@@ -20,7 +20,6 @@ client = OpenAI(
 
 MODEL = "meta-llama/llama-3-8b-instruct"
 
-
 def call_llm(system, user):
     """
     Call LLM with improved error handling
