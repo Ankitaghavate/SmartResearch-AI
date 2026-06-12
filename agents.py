@@ -1,7 +1,6 @@
 import json
 from utils import call_llm
 
-
 def planner(topic):
     """
     Planner Agent: Breaks down research topic into 3 strategic search queries
