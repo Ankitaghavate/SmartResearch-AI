@@ -47,11 +47,8 @@ This system goes beyond traditional chatbots by:
 ## 🏗️ System Architecture
 
 <p align="center">
-  <img src="assets/architecture.png" alt="Advanced Multi-Agent Research System Architecture" width="100%">
-</p>
+ <img width="1024" height="1536" alt="ChatGPT Image Jun 12, 2026, 03_23_46 PM" src="https://github.com/user-attachments/assets/685468a6-4b58-4edc-8a61-7f57f15fe060" />
 
-<p align="center">
-  <em>Multi-Agent Research Pipeline with RAG, FAISS, Verification, Summarization, and Interactive Q&A</em>
 </p>
 
 ---
